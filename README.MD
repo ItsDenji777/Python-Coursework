@@ -1,5 +1,5 @@
  <p align="center">
-  <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo" width="200">
+  <img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" alt="Python Logo" width="200">
 </p>
 
 <h1 align="center">Python Coursework</h1>
