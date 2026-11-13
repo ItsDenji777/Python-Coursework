@@ -18,6 +18,4 @@
 
 ---
 
-<p align="center">
-  Made by Kasra
-</p>
+<h3 align="center">Learning Progress</h3>
