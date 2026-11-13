@@ -19,3 +19,7 @@
 ---
 
 <h3 align="center">Learning Progress</h3>
+
+<div align="center">
+  <img src="assets/learning-progress.svg" alt="Python Learning Progress">
+</div>
