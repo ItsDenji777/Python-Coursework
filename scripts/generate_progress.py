@@ -36,16 +36,17 @@ def fetch_progress():
 
 
 
+
 def generate_svg(percentage):
     width = 514
-    bar_height = 30
+    bar_height = 36
     bar_x = 3
     bar_y = 8
 
     progress_width = width * percentage / 100
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
-        width="588" height="52" viewBox="0 0 588 52">
+        width="520" height="52" viewBox="0 0 520 52">
 
     <defs>
         <linearGradient id="pythonGradient" x1="0" y1="0" x2="1" y2="0">
@@ -65,9 +66,21 @@ def generate_svg(percentage):
             <stop offset="100%" stop-color="#769AB8" stop-opacity=".2"/>
         </linearGradient>
 
+        <filter id="textShadow" x="-20%" y="-50%" width="140%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+            <feOffset in="blur" dx="0" dy="1" result="offset"/>
+            <feComponentTransfer in="offset" result="shadow">
+                <feFuncA type="linear" slope=".65"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="shadow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
         <clipPath id="barClip">
             <rect x="{bar_x}" y="{bar_y}"
-                width="{width}" height="{bar_height}" rx="9"/>
+                width="{width}" height="{bar_height}" rx="10"/>
         </clipPath>
 
         <clipPath id="emptyClip">
@@ -78,8 +91,8 @@ def generate_svg(percentage):
     </defs>
 
     <!-- Shadow -->
-    <rect x="4" y="11" width="514" height="30"
-        rx="9" fill="#263C50" opacity=".17"/>
+    <rect x="4" y="11" width="514" height="36"
+        rx="10" fill="#263C50" opacity=".17"/>
 
     <g clip-path="url(#barClip)">
 
@@ -106,26 +119,29 @@ def generate_svg(percentage):
                  Q 260 23 4 17 Z"
             fill="#FFFFFF" opacity=".25"/>
 
+        <!-- Centered percentage -->
+        <text x="260" y="32"
+            text-anchor="middle"
+            font-family="Segoe UI, Arial, sans-serif"
+            font-size="20"
+            font-weight="700"
+            fill="#FFFFFF"
+            filter="url(#textShadow)">
+            {percentage:g}%
+        </text>
+
     </g>
 
     <!-- Metallic border -->
     <rect x="{bar_x}" y="{bar_y}"
         width="{width}" height="{bar_height}"
-        rx="9" fill="none"
+        rx="10" fill="none"
         stroke="#6D8FA9" stroke-width="1.8"/>
 
     <!-- Inner highlight -->
-    <rect x="5" y="10" width="510" height="26"
-        rx="7" fill="none"
+    <rect x="5" y="10" width="510" height="32"
+        rx="8" fill="none"
         stroke="#FFFFFF" stroke-opacity=".55"/>
-
-    <!-- Percentage -->
-        <text x="585" y="31" text-anchor="end"
-        font-family="Segoe UI, Arial, sans-serif"
-        font-size="25" font-weight="700"
-        fill="#3776AB">
-        {percentage:g}%
-    </text>
 
     </svg>'''
 
