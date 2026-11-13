@@ -45,7 +45,7 @@ def generate_svg(percentage):
     progress_width = width * percentage / 100
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg"
-        width="600" height="52" viewBox="0 0 600 52">
+        width="588" height="52" viewBox="0 0 588 52">
 
     <defs>
         <linearGradient id="pythonGradient" x1="0" y1="0" x2="1" y2="0">
@@ -120,7 +120,7 @@ def generate_svg(percentage):
         stroke="#FFFFFF" stroke-opacity=".55"/>
 
     <!-- Percentage -->
-        <text x="530" y="31"
+        <text x="585" y="31" text-anchor="end"
         font-family="Segoe UI, Arial, sans-serif"
         font-size="25" font-weight="700"
         fill="#3776AB">
