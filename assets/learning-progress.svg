@@ -37,8 +37,8 @@
         </clipPath>
 
         <clipPath id="emptyClip">
-            <rect x="100.660" y="8"
-                width="416.340"
+            <rect x="131.500" y="8"
+                width="385.500"
                 height="36"/>
         </clipPath>
     </defs>
@@ -80,7 +80,7 @@
             font-weight="700"
             fill="#FFFFFF"
             filter="url(#textShadow)">
-            19%
+            25%
         </text>
 
     </g>
